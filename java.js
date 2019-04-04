@@ -5,19 +5,18 @@ secretButton.addEventListener('click', function () {
   var odds = 0
   if (codeword === null) {
     window.alert('That is not an option')
-  }
-  if (codeword.toUpperCase().trim() === 'RUN') {
+  } else if (codeword.toUpperCase().trim() === 'RUN') {
     var weapon = window.confirm('do you pick up a stick before you go? YES or NO?')
     if (weapon) {
       odds += 0.3
     }
-    var choice1 = window.prompt('You choose to be a hero and run to help the person. the voice leads you to an allyway. and you see someone being robbed at gunpoint. What will you do? CALM down the robber? or FIGHT the robber?')
-    if (choice1 === null) {
+    var choice1 = window.prompt('You choose to be a hero and run to help the person. the voice leads you to an allyway. and you see someone being robbed at gunpoint. What will you do? 1). Calm down the robber? or 2). Fight the robber?')
+    var result = parseInt(choice1)
+    if (result === null) {
       window.alert('That is not an option')
-    }
-    if (choice1.toUpperCase().trim() === 'CALM') {
+    } else if (result === 1) {
       window.alert('your clever wordplay clamed the robber down and he ran away.')
-    } else if (choice1.toUpperCase().trim() === 'FIGHT') {
+    } else if (result === 2) {
       var rand = Math.random()
       if (odds && rand) {
         rand += odds
